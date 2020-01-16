@@ -1,0 +1,7 @@
+<form>
+  <input [(ngModel)]="debt.value" name="debtValue" type="number">
+  <button (click)="submit()">Submit</button>
+  <select>
+    <option *ngFor="let person of persons">{{person.firstName}}</option>
+  </select>
+</form>
