@@ -31,8 +31,11 @@ export class EntryComponent implements OnInit {
     });
   }
 
-  submit() {
-    this.debtService.post(this.debt);
+  submitIowe(person: Person, amount: number) {
+    console.log(`I owe ${person.firstName} ${amount}€`);
   }
 
+  submitOwsMe(person: Person, amount: number) {
+    console.log(`${person.firstName} owes me ${amount}€`);
+  }
 }

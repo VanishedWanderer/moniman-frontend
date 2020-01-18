@@ -1,7 +1,12 @@
-<form>
-  <input [(ngModel)]="debt.value" name="debtValue" type="number">
-  <button (click)="submit()">Submit</button>
-  <select>
-    <option *ngFor="let person of persons">{{person.firstName}}</option>
-  </select>
-</form>
+<mat-form-field>
+  <mat-label>Debtor</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let person of persons" [value]="person">
+      {{person.firstName}}
+    </mat-option>
+  </mat-select>
+
+  <mat-form-field>
+    <input matInput placeholder="Amount" type="number">
+  </mat-form-field>
+</mat-form-field>

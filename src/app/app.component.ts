@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
 import { PersonService } from './services/person.service';
+import { Person } from './models/person';
 
 @Component({
   selector: 'app-root',
@@ -15,16 +16,19 @@ export class AppComponent implements OnInit {
     private persons: PersonService
     ) {}
 
-  user: any;
+  user: Person = null;
 
   ngOnInit(): void {
-    this.keyCloak.loadUserProfile().then((token) => {
-      this.user = token;
-      console.log(this.user);
-    });
     this.persons.getMe().subscribe((abb) => {
-      console.log("ME")
-      console.log(abb);
+      this.user = abb;
     });
+  }
+
+  login() {
+    this.keyCloak.login();
+  }
+
+  logout() {
+    this.keyCloak.logout();
   }
 }

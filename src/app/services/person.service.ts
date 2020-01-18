@@ -18,7 +18,7 @@ export class PersonService {
     return this.http.get<Person[]>(`${this.config.serverUrl()}/persons`);
   }
 
-  getMe(): Observable<string> {
-    return this.http.get<string>(`${this.config.serverUrl()}/persons/me`);
+  getMe(): Observable<Person> {
+    return this.http.get<Person>(`${this.config.serverUrl()}/persons/me`);
   }
 }

@@ -10,12 +10,17 @@ import { EntryComponent } from './pages/entry/entry.component';
 import { environment } from 'src/environments/environment';
 import { AuthInterceptorService } from './interceptors/auth.interceptor';
 import { KeycloakService } from 'keycloak-angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+
 
 const keycloakService = new KeycloakService();
 
 @NgModule({
   declarations: [AppComponent, EntryComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule,
+    MatSelectModule
+  ],
   providers: [
     {
       provide: KeycloakService,
@@ -37,7 +42,7 @@ export class AppModule implements DoBootstrap {
     keycloakService
       .init({
         config: keycloakConfig,
-        initOptions: { onLoad: 'check-sso', checkLoginIframe: false },
+        initOptions: { onLoad: 'login-required', checkLoginIframe: true },
         enableBearerInterceptor: false,
         bearerExcludedUrls: [],
         authorizationHeaderName: 'Authorization',

@@ -1,3 +1,10 @@
-<button>Login</button>
-{{user.username}}
+<div *ngIf="user">
+  <button (click)="logout()">Logout</button>
+  <p>
+    {{user.firstName}} {{user.lastName}}
+  </p>
+</div>
+<div *ngIf="!user">
+  <button (click)="login()">Login</button>
+</div>
 <router-outlet></router-outlet>
