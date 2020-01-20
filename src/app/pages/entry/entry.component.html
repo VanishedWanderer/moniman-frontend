@@ -1,4 +1,4 @@
 <div>
-  <a routerLink="/iowe" routerLinkActive="active">I owe</a>
-  <a routerLink="/owsme" routerLinkActive="active">Ows Me</a>
+  <a [routerLink]="['/debt', 'debtor']" routerLinkActive="active">I owe</a>
+  <a [routerLink]="['/debt', 'creditor']" routerLinkActive="active">Ows Me</a>
 </div>

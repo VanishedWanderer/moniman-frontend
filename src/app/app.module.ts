@@ -17,14 +17,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
-import { IoweComponent } from './pages/iowe/iowe.component';
-import { OwsmeComponent } from './pages/owsme/owsme.component';
-import { DebtformComponent } from './pages/debtform/debtform.component';
+import { DebtPageComponent } from './pages/debt/debt-page.component';
+import { DebtComponent } from './components/debt/debt.component';
+import { ReviewComponent } from './pages/review/review.component';
+import { PersonComponent } from './components/person/person.component';
 
 const keycloakService = new KeycloakService();
 
 @NgModule({
-  declarations: [AppComponent, EntryComponent, IoweComponent, OwsmeComponent, DebtformComponent],
+  declarations: [AppComponent, EntryComponent, DebtPageComponent, ReviewComponent,
+    DebtComponent,
+    PersonComponent
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule,
     ReactiveFormsModule,
     MatSelectModule,

@@ -1,0 +1,13 @@
+<div>
+  <form (ngSubmit)="submit()">
+    <mat-select [(ngModel)]="person" name="person">
+      <mat-option *ngFor="let person of persons" [value]="person">{{person.firstName}} {{person.lastName}}</mat-option>
+    </mat-select>
+
+    <mat-form-field>
+      <input placeholder="Amount" matInput [(ngModel)]="amount" type="number" name="amount">
+    </mat-form-field>
+
+    <button mat-raised-button type="submit">Submit</button>
+  </form>
+</div>

@@ -20,12 +20,12 @@ export class DebtService {
     private config: ConfigService
   ) { }
 
-  findAll(): Observable<Debt[]>{
+  findAll(): Observable<Debt[]> {
     return this.http.get<Debt[]>(`${this.config.serverUrl()}/debts`);
   }
 
 
-  post(debt: Debt) {
-    return this.http.post(`${this.config.serverUrl()}/debts`, debt, options).subscribe();
+  post(debt: Debt): Observable<Debt> {
+    return this.http.post<Debt>(`${this.config.serverUrl()}/debts`, debt, options);
   }
 }
