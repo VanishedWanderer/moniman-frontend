@@ -1,12 +1,4 @@
-<mat-form-field>
-  <mat-label>Debtor</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let person of persons" [value]="person">
-      {{person.firstName}}
-    </mat-option>
-  </mat-select>
-
-  <mat-form-field>
-    <input matInput placeholder="Amount" type="number">
-  </mat-form-field>
-</mat-form-field>
+<div>
+  <a routerLink="/iowe" routerLinkActive="active">I owe</a>
+  <a routerLink="/owsme" routerLinkActive="active">Ows Me</a>
+</div>

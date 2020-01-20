@@ -12,14 +12,26 @@ import { AuthInterceptorService } from './interceptors/auth.interceptor';
 import { KeycloakService } from 'keycloak-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatStepperModule } from '@angular/material/stepper';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { IoweComponent } from './pages/iowe/iowe.component';
+import { OwsmeComponent } from './pages/owsme/owsme.component';
+import { DebtformComponent } from './pages/debtform/debtform.component';
 
 const keycloakService = new KeycloakService();
 
 @NgModule({
-  declarations: [AppComponent, EntryComponent],
+  declarations: [AppComponent, EntryComponent, IoweComponent, OwsmeComponent, DebtformComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule,
-    MatSelectModule
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatInputModule,
+    MatButtonModule,
+    MatStepperModule,
+    MatCardModule
   ],
   providers: [
     {

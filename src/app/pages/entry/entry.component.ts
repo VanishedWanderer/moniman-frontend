@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Debt } from 'src/app/models/debt';
 import { Person } from 'src/app/models/person';
 import { PersonService } from 'src/app/services/person.service';
 import { DebtService } from 'src/app/services/debt.service';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-entry',
@@ -11,31 +13,11 @@ import { DebtService } from 'src/app/services/debt.service';
 })
 export class EntryComponent implements OnInit {
 
-  debt: Debt = {
-    amount: 0,
-    debtor: null,
-    creditor: null
-  };
+  ngOnInit(): void {
+  }
 
-  persons: Person[];
 
   constructor(
-    private personsService: PersonService,
-    private debtService: DebtService
   ) {}
 
-
-  ngOnInit() {
-    this.personsService.findAll().subscribe((persons) => {
-      this.persons = persons;
-    });
-  }
-
-  submitIowe(person: Person, amount: number) {
-    console.log(`I owe ${person.firstName} ${amount}€`);
-  }
-
-  submitOwsMe(person: Person, amount: number) {
-    console.log(`${person.firstName} owes me ${amount}€`);
-  }
 }

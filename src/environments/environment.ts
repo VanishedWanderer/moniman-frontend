@@ -6,9 +6,9 @@ import { KeycloakConfig } from 'keycloak-angular';
 
 
 const keycloakConfig: KeycloakConfig = {
-  url: 'http://localhost:8180/auth',
+  url: 'https://auth.obyoxion.at/auth',
   realm: 'moniman',
-  clientId: 'moniman-web'
+  clientId: 'moniman-frontend-angular'
 };
 
 export const environment = {

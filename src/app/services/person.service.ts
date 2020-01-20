@@ -18,6 +18,10 @@ export class PersonService {
     return this.http.get<Person[]>(`${this.config.serverUrl()}/persons`);
   }
 
+  findOthers(): Observable<Person[]> {
+    return this.http.get<Person[]>(`${this.config.serverUrl()}/persons/others`);
+  }
+
   getMe(): Observable<Person> {
     return this.http.get<Person>(`${this.config.serverUrl()}/persons/me`);
   }

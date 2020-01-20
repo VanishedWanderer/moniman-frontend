@@ -1,0 +1,7 @@
+<div>
+  <mat-select [(ngModel)]="person">
+    <mat-option *ngFor="let person of persons" [value]="person">{{person.firstName}} {{person.lastName}}</mat-option>
+  </mat-select>
+
+  <input matInput [(ngModel)]="amount" type="number">
+</div>
