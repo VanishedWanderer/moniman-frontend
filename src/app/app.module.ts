@@ -21,6 +21,7 @@ import { DebtPageComponent } from './pages/debt/debt-page.component';
 import { DebtComponent } from './components/debt/debt.component';
 import { ReviewComponent } from './pages/review/review.component';
 import { PersonComponent } from './components/person/person.component';
+import {MatMenuModule, MatToolbarModule} from '@angular/material';
 
 const keycloakService = new KeycloakService();
 
@@ -35,7 +36,8 @@ const keycloakService = new KeycloakService();
     MatInputModule,
     MatButtonModule,
     MatStepperModule,
-    MatCardModule
+    MatMenuModule,
+    MatCardModule, MatToolbarModule
   ],
   providers: [
     {

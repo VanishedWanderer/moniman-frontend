@@ -1,10 +1,17 @@
-<div *ngIf="user">
-  <button (click)="logout()">Logout</button>
-  <p>
-    {{user.firstName}} {{user.lastName}}
-  </p>
-</div>
-<div *ngIf="!user">
-  <button (click)="login()">Login</button>
-</div>
+<mat-toolbar>
+  <span>Moniman</span>
+
+  <div class="toolbar-spacer"></div>
+
+  <div *ngIf="!user">
+    <button mat-button (click)="login()">Login</button>
+  </div>
+  <div *ngIf="user">
+<!--    <button mat-button (click)="logout()">Logout</button>-->
+    <button mat-button [matMenuTriggerFor]="userMenu">{{user.firstName}} {{user.lastName}}</button>
+    <mat-menu #userMenu>
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
 <router-outlet></router-outlet>
